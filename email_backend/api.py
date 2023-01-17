@@ -42,7 +42,7 @@ def email():
     context = ssl.create_default_context()
 
     with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as server:
-        server.login(from_address, 'pvmikmfdnytmdnan')
+        server.login(from_address, 'secret')
         server.sendmail(from_address, to_address, msg.as_string())
 
     return jsonify(name, email, phone, date, eventType, body), 200
